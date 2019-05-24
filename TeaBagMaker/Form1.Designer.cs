@@ -28,48 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.tea = new System.Windows.Forms.ComboBox();
+            this.label = new System.Windows.Forms.Label();
+            this.start = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.textBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // tea
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 0;
+            this.tea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tea.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tea.FormattingEnabled = true;
+            this.tea.Location = new System.Drawing.Point(32, 50);
+            this.tea.Name = "tea";
+            this.tea.Size = new System.Drawing.Size(275, 22);
+            this.tea.TabIndex = 0;
+            this.tea.SelectedIndexChanged += new System.EventHandler(this.Tea_SelectedIndexChanged);
             // 
-            // label1
+            // label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label.Location = new System.Drawing.Point(8, 9);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(330, 21);
+            this.label.TabIndex = 1;
+            this.label.Text = "티백을 고르고, 차 우리기를 시작하세요.";
+            this.label.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // button1
+            // start
             // 
-            this.button1.Location = new System.Drawing.Point(160, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.start.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.start.Location = new System.Drawing.Point(209, 89);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(98, 39);
+            this.start.TabIndex = 2;
+            this.start.Text = "차 우리기";
+            this.start.UseVisualStyleBackColor = true;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            // 
+            // textBox
+            // 
+            this.textBox.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox.Location = new System.Drawing.Point(32, 89);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(171, 39);
+            this.textBox.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 308);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(346, 140);
+            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.start);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.tea);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tea time";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -78,9 +101,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox tea;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button start;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.TextBox textBox;
     }
 }
 
